@@ -10,7 +10,7 @@ public abstract class IntegrationTestBase : IAsyncLifetime
         Fixture = fixture;
     }
 
-    protected PizzaDb CreateDbContext() => Fixture.CreateContext();
+    protected ContosoPizzaDbContext CreateDbContext() => Fixture.CreateContext();
 
     public Task InitializeAsync() => Task.CompletedTask;
 

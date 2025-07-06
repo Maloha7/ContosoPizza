@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ContosoPizza.Data;
 
-public class PizzaDb : DbContext
+public class ContosoPizzaDbContext : DbContext
 {
-    public PizzaDb(DbContextOptions<PizzaDb> options) : base(options) { }
+    public ContosoPizzaDbContext(DbContextOptions<ContosoPizzaDbContext> options) : base(options) { }
 
     public DbSet<Pizza> Pizzas { get; set; } = null!;
 

@@ -10,8 +10,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace ContosoPizza.Migrations
 {
-    [DbContext(typeof(PizzaDb))]
-    [Migration("20250706094732_InitialCreate")]
+    [DbContext(typeof(ContosoPizzaDbContext))]
+    [Migration("20250706204951_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />

@@ -1,0 +1,11 @@
+.git/
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.pdb
+*.lock.json
+*.nupkg
+.template.config/
+.templateignore
