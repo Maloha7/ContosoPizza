@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Maloha",
+  "classifications": ["WebAPI", "Testcontainers", "EFCore", "Docker", "xUnit"],
+  "identity": "ContosoPizza.Template",
+  "name": "ContosoPizza Starter Template",
+  "shortName": "contosopizza",
+  "sourceName": "ContosoPizza",
+  "preferNameDirectory": true,
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "symbols": {
+    "namespace": {
+      "type": "parameter",
+      "datatype": "string",
+      "defaultValue": "ContosoPizza",
+      "replaces": "ContosoPizza"
+    }
+  },
+  "postActions": [
+    {
+      "description": "Restore NuGet packages",
+      "manualInstructions": [{ "text": "Run 'dotnet restore'" }],
+      "actionId": "d3541d94-45f9-432c-9336-4f2cb20a6c5e",
+      "args": {
+        "silent": "true"
+      },
+      "continueOnError": true
+    }
+  ]
+}
