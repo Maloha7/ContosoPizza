@@ -1,8 +1,12 @@
 using System.Reflection;
+
 using ContoroPizza.Interfaces;
+
 using ContosoPizza.Data;
 using ContosoPizza.Services;
+
 using Microsoft.EntityFrameworkCore;
+
 using Npgsql;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -1,8 +1,10 @@
-using DotNet.Testcontainers.Builders;
-using DotNet.Testcontainers.Containers;
-using Microsoft.EntityFrameworkCore;
 using ContosoPizza.Data;
+
+using DotNet.Testcontainers.Builders;
 using DotNet.Testcontainers.Configurations;
+using DotNet.Testcontainers.Containers;
+
+using Microsoft.EntityFrameworkCore;
 
 public class PostgresTestContainerFixture : IAsyncLifetime
 {
