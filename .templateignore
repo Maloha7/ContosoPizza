@@ -1,10 +1,11 @@
-# Ignore Git folder
 .git/
-
-# Ignore build output folders anywhere in the project
+.vs/
 bin/
 obj/
-
-# ignore IDE/editor folders if present
-.vscode/
-.idea/
+*.user
+*.suo
+*.pdb
+*.lock.json
+*.nupkg
+.template.config/
+.templateignore

@@ -19,13 +19,36 @@
       "replaces": "ContosoPizza"
     }
   },
+  "primaryOutputs": [
+    {
+      "path": "ContosoPizza.sln"
+    }
+  ],
+  "sources": [
+    {
+      "exclude": [
+        ".git/**",
+        ".vs/**",
+        "**/bin/**",
+        "**/obj/**",
+        "**/*.user",
+        "**/*.suo",
+        "**/*.pdb",
+        "**/*.lock.json",
+        "**/*.nupkg",
+        ".template.config/**",
+        ".templateignore"
+      ]
+    }
+  ],
   "postActions": [
     {
       "description": "Restore NuGet packages",
       "manualInstructions": [{ "text": "Run 'dotnet restore'" }],
-      "actionId": "d3541d94-45f9-432c-9336-4f2cb20a6c5e",
+      "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
       "args": {
-        "silent": "true"
+        "executable": "dotnet",
+        "args": "restore"
       },
       "continueOnError": true
     }
