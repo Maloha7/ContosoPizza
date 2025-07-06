@@ -31,6 +31,6 @@ public class PizzaServiceTests : IntegrationTestBase
         var service = new PizzaService(db);
 
         var pizzas = await service.GetAll();
-        pizzas.Should().BeEmpty(); // passes because DB is reset
+        pizzas.Should().BeEmpty();
     }
 }

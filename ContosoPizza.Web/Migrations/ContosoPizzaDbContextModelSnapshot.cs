@@ -9,8 +9,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace ContosoPizza.Migrations
 {
-    [DbContext(typeof(PizzaDb))]
-    partial class PizzaDbModelSnapshot : ModelSnapshot
+    [DbContext(typeof(ContosoPizzaDbContext))]
+    partial class ContosoPizzaDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {

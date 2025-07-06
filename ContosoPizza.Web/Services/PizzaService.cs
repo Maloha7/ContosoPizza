@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ContosoPizza.Services;
 
-public class PizzaService(PizzaDb db) : IPizzaService
+public class PizzaService(ContosoPizzaDbContext db) : IPizzaService
 {
     public async Task<Pizza> Add(Pizza pizza)
     {

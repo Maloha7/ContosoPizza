@@ -23,27 +23,27 @@ try
     testConn.Open(); // throws if DB is unavailable
     testConn.Close();
 
-    builder.Services.AddDbContext<PizzaDb>(options =>
+    builder.Services.AddDbContext<ContosoPizzaDbContext>(options =>
         options.UseNpgsql(connectionString));
     Console.WriteLine("Using PostgreSQL database.");
 }
 catch
 {
-    builder.Services.AddDbContext<PizzaDb>(options =>
-        options.UseInMemoryDatabase("DevPizzaDb"));
+    builder.Services.AddDbContext<ContosoPizzaDbContext>(options =>
+        options.UseInMemoryDatabase("ContosoPizzaDbDev"));
     Console.WriteLine("PostgreSQL unavailable. Falling back to In-Memory database.");
 }
 
 
 // *** In Memory Database ***
-// builder.Services.AddDbContext<PizzaDb>(options => options.UseInMemoryDatabase("items"));
+// builder.Services.AddDbContext<ContosoPizzaDbContext>(options => options.UseInMemoryDatabase("items"));
 
 // *** Persistent database (using Db file) ***
 // var connectionString = builder.Configuration.GetConnectionString("Pizzas") ?? "Data Source=Pizzas.db";
-// builder.Services.AddSqlite<PizzaDb>(connectionString);
+// builder.Services.AddSqlite<ContosoPizzaDbContext>(connectionString);
 
 // *** Postgres sql docker container ***
-// builder.Services.AddDbContext<PizzaDb>(options =>
+// builder.Services.AddDbContext<ContosoPizzaDbContext>(options =>
 //     options.UseNpgsql(builder.Configuration.GetConnectionString("Default")));
 
 
@@ -74,7 +74,7 @@ var env = scope.ServiceProvider.GetRequiredService<IHostEnvironment>();
 
 if (env.IsDevelopment())
 {
-    var db = scope.ServiceProvider.GetRequiredService<PizzaDb>();
+    var db = scope.ServiceProvider.GetRequiredService<ContosoPizzaDbContext>();
     if (db.Database.IsRelational())
     {
         db.Database.Migrate();

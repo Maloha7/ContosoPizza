@@ -40,7 +40,7 @@ public class PostgresTestContainerFixture : IAsyncLifetime
     private async Task EnsureDatabaseIsReady()
     {
         // Wait for database to be connectable
-        var options = new DbContextOptionsBuilder<PizzaDb>()
+        var options = new DbContextOptionsBuilder<ContosoPizzaDbContext>()
             .UseNpgsql(_container.ConnectionString)
             .Options;
 
@@ -48,7 +48,7 @@ public class PostgresTestContainerFixture : IAsyncLifetime
         {
             try
             {
-                using var db = new PizzaDb(options);
+                using var db = new ContosoPizzaDbContext(options);
                 await db.Database.OpenConnectionAsync();
                 await db.Database.CloseConnectionAsync();
                 return;
@@ -64,22 +64,22 @@ public class PostgresTestContainerFixture : IAsyncLifetime
 
     private async Task ApplyMigrations()
     {
-        var options = new DbContextOptionsBuilder<PizzaDb>()
+        var options = new DbContextOptionsBuilder<ContosoPizzaDbContext>()
             .UseNpgsql(_container.ConnectionString)
             .Options;
 
-        using var db = new PizzaDb(options);
+        using var db = new ContosoPizzaDbContext(options);
         await db.Database.MigrateAsync();
     }
 
     // Provide clean DbContext to tests
-    public PizzaDb CreateContext()
+    public ContosoPizzaDbContext CreateContext()
     {
-        var options = new DbContextOptionsBuilder<PizzaDb>()
+        var options = new DbContextOptionsBuilder<ContosoPizzaDbContext>()
             .UseNpgsql(_container.ConnectionString)
             .Options;
 
-        return new PizzaDb(options);
+        return new ContosoPizzaDbContext(options);
     }
 
     public async Task ResetDatabaseAsync()

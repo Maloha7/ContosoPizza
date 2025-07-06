@@ -1,0 +1,10 @@
+# Ignore Git folder
+.git/
+
+# Ignore build output folders anywhere in the project
+bin/
+obj/
+
+# ignore IDE/editor folders if present
+.vscode/
+.idea/
