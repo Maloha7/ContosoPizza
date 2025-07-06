@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ContosoPizza</name>
+    </assembly>
+    <members>
+        <member name="M:ContoroPizza.Controllers.PizzaController.GetAll">
+            <summary>
+            Get all available pizzas
+            </summary>
+            <returns> A list of all available Pizzas </returns>
+        </member>
+        <member name="M:ContoroPizza.Controllers.PizzaController.Get(System.Int32)">
+            <summary>
+            Get a specific pizza
+            </summary>
+            <param name="id">The id of the pizza</param>
+            <returns>The pizza with the specified id</returns>
+            <response code="200">Returns the pizza with the specified id if it exists</response>
+            <response code="404">Returns Not Found if the pizza with the specified id does not exist</response>
+        </member>
+        <member name="M:ContoroPizza.Controllers.PizzaController.Create(ContoroPizza.Dtos.AddPizzaDto)">
+             <summary>
+             Add a new pizza
+             </summary>
+             <returns>A newly created pizza</returns>
+             <remarks>
+             Sample request:
+            
+                 POST /pizza
+                 {
+                     "name": "Hawaii",
+                     "isGlutenFree": false
+                 }
+             </remarks>
+             <param name="pizza">The pizza that should be created</param>
+             <response code="201">Returns status code 201 created</response>
+        </member>
+        <member name="M:ContoroPizza.Controllers.PizzaController.Update(System.Int32,ContosoPizza.Models.Pizza)">
+            <summary>
+            Update a pizza
+            </summary>
+            <param name="id">The id of the pizza to update</param>
+            <param name="pizza"> The updated pizza</param>
+            <response code="400">If the id's do not match</response>
+            <response code="404">If the id does not correspond to an existing pizza</response>
+            <response code="204">If the pizza was updated successfully</response>
+        </member>
+        <member name="M:ContoroPizza.Controllers.PizzaController.Delete(System.Int32)">
+            <summary>
+            Delete a pizza
+            </summary>
+            <param name="id">The id of the pizza to delete</param>
+            <response code="404">If the id does not correspond to an existing pizza</response>
+            <response code="204">If the pizza was deleted successfully</response>
+        </member>
+        <member name="T:ContosoPizza.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:ContosoPizza.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ContosoPizza.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ContosoPizza.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
